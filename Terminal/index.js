@@ -1,2 +1,4 @@
-Hola Mundo este es mi primer archivo escrito con  VIM
+let a=10;
+let b=11;
+
 
