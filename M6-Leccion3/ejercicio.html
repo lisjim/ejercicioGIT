@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>08 - arrays</title>
+<meta name="Liseth Jimenez" content="francesc ricart"/>
+</head>
+<body>
+
+    <script>
+        // Crea un arreglo con los siguientes nombres (Adrián, Juan, Marcos, Ignacio, Raúl, Gabriela, Rosario, Selene, Ana, María)
+        var amigos = ["Adrián","Juan","Marcos","Ignacio","Gabriela","Rosario","Selene","Ana","Maria"];
+        for(let c=0; c<amigos.length ; c++){
+            document.write(amigos[c], '<br>');
+        }
+
+        // Crea una función que genere número entero aleatorio entre min y max, que serán pasados como parámetros. Por defecto min = 1 y max = 100
+        document.write("<br>");
+        var aleatorio = Math.random();
+        let min=1;
+        let max=100;
+        for(let c=0; c<1 ; c++){
+            document.write(random(min,max), '<br>');
+        }
+        // En un ciclo que imprima el nombre y un número aleatorio generado por la función, del total de nombres del arreglo.
+        document.write("<br>
+        let min1=1;
+        let max2=amigos.length;
+        for(let c=0; c<1 ; c++){
+            let n = random(min1,max2);
+            document.write(n + " : " + amigos[n]);
+        }
+
+
+        function random(min, max) {
+            return Math.floor((Math.random() * (max - min + 1)) + min);
+        }
+</script>
+</body>
+</html>
