@@ -1,1 +1,2 @@
-alert("Un mensaje de prueba");
+//alert("Un mensaje de prueba");
+console.log("algo");
