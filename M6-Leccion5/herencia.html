@@ -1,0 +1,69 @@
+<html>
+   <div id="gatoxtiro"></div>
+</html>
+
+<script>
+class Humano {
+    //Propiedad
+    nombre;
+    apellido;
+    _edad="10/12/1987";
+    hobbies;
+    //Construtor
+    constructor(nombre="Juan",apellido="sanchez", edad="18",hobbies){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.edad=edad;
+        this.hobbies=hobbies;
+    }
+    saludo(){
+        console.log("HOla soy :"+this.nombre);
+    }
+     set edad(edad){
+     
+            if(edad<0){
+                console.warn("Pon una edad positiva")
+                this._edad=0;
+            }else{
+                this._edad=edad;
+            }
+    }
+    get edad() {
+        return this._edad;
+    }
+}
+ 
+class Alumno extends Humano{
+ 
+    asignaturas=["mate","ingenieria"];
+    idAlumno;
+ 
+    constructor(idAlumno, nombre="Juan",apellido="sanchez", edad="18",hobbies){
+      
+        super(nombre, apellido, edad, hobbies);
+        this.idAlumno=idAlumno;
+    }
+    inscribir(materia){
+        this.asignaturas.push(materia);     
+    }
+ 
+    saludo(){
+        super.saludo();
+        console.log("Tengo estas materias:"+  JSON.stringify(this.asignaturas)+" tengo "+this.edad);
+    }
+ 
+}
+ 
+ 
+let humanito = new Humano("Juan", "yo","35", ['Repollo', 'Nabo', 'Rábano', 'Zanahoria']);
+//debugger;
+ 
+console.log(humanito.edad);
+let alumno1= new Alumno(500);
+ 
+ alumno1.edad=10;
+ alumno1.saludo();
+ alumno1.inscribir("Ingles")
+ alumno1.edad=12;
+ alumno1.saludo();
+</script>

@@ -6,6 +6,7 @@
     <BODY>
         <script>
             var inicio=["unacadena",3,9,1,10,500,1,10,true];
+            var fin=[];
 
             var n, i, k, aux;
             n = inicio.length;
@@ -15,14 +16,22 @@
             for (k = 1; k < n; k++) {
                 for (i = 0; i < (n - k); i++) {
                     if (inicio[i] > inicio[i + 1]) {
+                        if(typeof(inicio[i]) === "number"){
                         aux = inicio[i];
                         inicio[i] = inicio[i + 1];
                         inicio[i + 1] = aux;
+                        fin[i-1]=aux;
+                        //console.log(inicio);
+                        }
+                        else
+                        {
+
+                        }
                     }
                 }
             }
         
-            console.log(inicio); // Mostramos, por consola, la lista ya ordenada
+            console.log(fin); // Mostramos, por consola, la lista ya ordenada
                 
 
         

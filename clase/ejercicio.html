@@ -1,0 +1,56 @@
+<!-- Solicitar la edad al usuario  * 
+    Validar que el usuario no meta caracteres 
+si no solo nuemro no 0 no negativos. 
+Si no esta bien el valor volverlo a solicitar. 
+ 
+*  Mostrar en una ventana pop-up (emergente) el mensaje: “Gracias por tu respuesta” 
+ alert  Mostrar en el cuadro de  resultados del editor el mensaje: “Tienes XX años” 
+ tu numero es   par o impar   Pedirle al usuario su nombre completo. Guardar cada parte 
+ del nombre en un array parten por espacios y cada palabra la guardan en una posicion 
+ del arreglo.  "juan miguel Rolland"  ["juan miguel Rolland barrtilo  sanches"]
+ no se vale  ["juan", "miguel", "Rolland"]  Pista usar split   Imprimirlo 
+ en un console log Cambiar el nombre de en medio por "feliz" ["juan", "feliz", "Rolland"]
+  Volverlo a imprimir.
+juan feliz rolland*/-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let isInvalidAge = true;
+    let age ;
+    do {
+        age = prompt('Ingrese su edad:','');
+        console.log(typeof age);
+        age=parseInt(age);
+        console.log(typeof age);
+        if( age > 0 && typeof age == 'number') {
+            isInvalidAge = false;
+            
+            alert("Gracias por tu respuesta");
+        }
+    } while (isInvalidAge);
+
+    function validAge(age) {
+        return age % 2 === 0 ?  'par' : 'impar';
+    }
+    alert(`Tienes ${age} años. Es ${validAge(age)}.`);
+
+    let fullname = prompt('Ingrese su nombre:','');
+    const arrayNames = fullname.split(' ');
+    const index =  Math.round(arrayNames.length / 2) - 1;
+    console.log(arrayNames);
+    console.log(index);
+    arrayNames[index] = 'Feliz';
+    console.log(arrayNames);
+
+
+</script>
+</body>
+</html>
+
