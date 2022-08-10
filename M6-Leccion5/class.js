@@ -5,21 +5,25 @@ class Animal{
 
 
 hablar(){
-    console.log(this.nombre + "hace un ruido");
+    console.log(this.nombre + " hace un ruido");
 }
 }
 
 class Perro extends Animal{
     hablar(){
-        console.log(this.nombre + "ladra.");
+        super.hablar();
+        console.log(this.nombre + " ladra.");
     }
 }
 
-let myAni = new Animal("Liseth");
+let myAni = new Animal('Bruno');
 //hablar();
 
-let myPe = new Perro(myAni);
+let myPe = new Perro(myAni.nombre);
 myPe.hablar();
+
+var p = new Perro('Mitzie');
+p.hablar();
 
 //También se pueden extender las clases tradicionales basadas en funciones:
 /*function Animal (nombre){
