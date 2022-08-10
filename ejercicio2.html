@@ -16,11 +16,11 @@
             for (k = 1; k < n; k++) {
                 for (i = 0; i < (n - k); i++) {
                     if (inicio[i] > inicio[i + 1]) {
-                        if(typeof(inicio[i]) === "number"){
+                        if(typeof(inicio[i+1]) === "number"){
                         aux = inicio[i];
                         inicio[i] = inicio[i + 1];
                         inicio[i + 1] = aux;
-                        fin[i-1]=aux;
+                        fin[i]=aux;
                         //console.log(inicio);
                         }
                         else
@@ -31,8 +31,8 @@
                 }
             }
         
-            console.log(fin); // Mostramos, por consola, la lista ya ordenada
-                
+            console.log(inicio); // Mostramos, por consola, la lista ya ordenada
+            console.log(fin);    
 
         
             
