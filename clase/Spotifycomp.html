@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let Ncanciones = 0; //variable global con let para que solo exista dentro del programa y que desde fuera para que lo pueda llamar en todo el codigo.
+
+class Spotify {
+    menu;
+    
+    constructor(menu){
+        this.menu = menu;
+    }
+
+    ImprMenu(){
+        alert("BIENVENIDO A SPOTIFY, ¿Quieres ingresar al menú?");
+        this.menu = prompt("1. Mostrar canciones, 2. Seleccionar canciones, 3. Agregar nueva cancion, 4. Parar, 5. Reproducir, 6. Buscar canciones por nombre, 7. Crear lista de reproducción, 8. Seleccionar PlayList, 9. Imprimir catálogo, 10. Ver catálogo de duración, 11. Ver catálogo alfabético, 12. Cancelar"); 
+    }
+   
+}
+
+class Cancion extends Spotify {
+    _ID = 0;
+    nombre;
+    duracion;
+    genero;
+
+    constructor(_ID, nombre, duracion, genero){
+        super(_ID, nombre, duracion, genero);
+        this._ID = numCancion; // para que el ID vaya aumentando solo
+        numCancion++; // se incrementa el ID
+        this.nombre = nombre;
+        this.duracion = duracion;
+        this.genero = genero;
+    }
+
+    set id (id){ //el set para que yo no ingrese el id porque el programa no serviria
+        //thow("Error");  con thow se para el programa
+        console.log("Error");
+        }
+    }
+
+    //    let cancion1 = new Cancion("Tarzan Boy", "3", "Disco");
+    ListaCanciones.push( new Reproductor("Tarzan Boy", "1", "Disco"));
+    ListaCanciones.push( new Reproductor("Culture Club", "4", "Disco"));
+    ListaCanciones.push( new Reproductor("Maneater", "2", "Disco"));
+    ListaCanciones.push( new Reproductor("Self Control", "3", "Disco"));
+    ListaCanciones.push( new Reproductor("Like A virgin", "5", "Disco"));
+    ListaCanciones.push( new Reproductor("Papa don't preach", "6", "Disco"));
+    ListaCanciones.push( new Reproductor("Material girl", "8", "Disco"));
+    ListaCanciones.push( new Reproductor("Beat it", "9", "Disco"));
+    ListaCanciones.push( new Reproductor("Remember", "7", "Disco"));
+    ListaCanciones.push( new Reproductor("Radio Ga Ga", "10", "Disco"));
+    ListaCanciones.push( new Reproductor("Da ya think I'm sexy?", "12", "Disco"));
+    ListaCanciones.push( new Reproductor("Everybody wants to rule the worl", "11", "Disco"));
+    ListaCanciones.push( new Reproductor("Never give you up", "13", "Disco"))
+    ListaCanciones.push( new Reproductor("Big in Japan", "14", "Disco"));
+
+class Reproductor extends Spotify {
+    ListaCanciones = [];
+    actual;
+    play;
+    listaPlayList;
+
+    constructor(listaCanciones){
+        super(listaCanciones);
+        this.listaCanciones = ListaCanciones;
+    }
+
+    agregarCancion(Cancion){
+        if ( this.menu == 3){
+            alert("¿QUIERES AGREGAR UNA NUEVA MUSICA?");
+            this.nombre = prompt("INGRESE EL NOMBRE DE LA CANCION");
+            this.duracion = prompt("INGRESE EL NOMBRE DE LA DURACION DE LA CANCION");
+            this.genero = prompt("INGRESE EL NOMBRE DEL GENERO DE LA CANCION");
+            this.listaCanciones.push(Cancion);
+            let reproductor = new Reproductor (ListaCanciones);
+            console.log(reproductor.listaCanciones);
+        } else if (This.menu == 12){
+            alert("¿DESEAS VOLVER AL MENU?");
+            let opcion = new Spotify (menu);
+            console.log(opcion.menu);
+        } else {
+            alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+        } 
+    } 
+
+    mostrarCancion(){
+        let mostrar= [];
+        if (this.menu == 1){
+            alert("A CONTINUACION TE MUESTRO LAS CANCIONES");
+            for (i = 0; i < ListaCanciones.length; i++){ 
+                for (can of ListaCanciones){ 
+                    mostrar(can);
+                }
+            } 
+        } else if (This.menu == 12){
+            alert("¿DESEAS VOLVER AL MENU?");
+            let opcion = new Spotify (menu);
+            console.log(opcion.menu);
+        } else {
+            alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+        }
+    }
+
+    seleccionarCancion(){
+
+    }
+
+    play(){
+        if(this.menu == 5){
+            if(this.play == false){
+                this.play = true;
+                alert("ACABAS DE REPRODUCIR LA MUSICA");
+            }
+        } else if (This.menu == 12){
+            alert("¿DESEAS VOLVER AL MENU?");
+            let opcion = new Spotify (menu);
+            console.log(opcion.menu);
+        } else {
+            alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+        }
+    }
+
+    stop(){
+        if(this.menu == 4){
+            if(this.play == true){
+                this.play = false;
+                alert("ACABAS DE PARAR LA MUSICA");
+            }
+        } else if (This.menu == 12){
+            alert("¿DESEAS VOLVER AL MENU?");
+            let opcion = new Spotify (menu);
+            console.log(opcion.menu);
+        } else {
+            alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+        }
+    }
+
+    buscar(Cancion){
+        if (menu == 6){
+            alert("BUSQUEMOS LA MUSICA");
+            for (let i = 0; i < this.ListaCanciones.length; i++) {
+                this.nombre=this.listadecanciones;
+                if(this.nombre == Cancion){
+                    console.log("Nombre de cancion: " + this.nombre);
+                } else {
+                    alert("CANCION NO ENCONTRADA");
+                }
+           }
+        } else if (This.menu == 12){
+            alert("¿DESEAS VOLVER AL MENU?");
+            let opcion = new Spotify (menu);
+            console.log(opcion.menu);
+        } else {
+            alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+        }
+    }
+
+    crearListaDeReproduccion(){
+        nuevaLista = [];
+        if (this.menu == 7){
+            alert("TIENES UNA LISTA EN USO " + listaCanciones);
+            let nuevo = prompt ("INGRESA EL NOMBRE DE LA NUEVA LISTA");
+            nuevaLista = new Reproductor (ListaCanciones + nuevo)
+            console.log(nuevaLista);
+        }else if (This.menu == 12){
+            alert("¿DESEAS VOLVER AL MENU?");
+            let opcion = new Spotify (menu);
+            console.log(opcion.menu);
+        } else {
+            alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+        }
+
+    }
+
+    seleccionarPlayList(nombre){
+
+    }
+    
+
+    imprimirCatalogo(){
+        if (this.menu == 9){
+        for (let i = 0; i < this.ListaCanciones.length; i++) {
+            this.nombre=this.ListaCanciones;
+            this.duracion=this.ListaCanciones;
+            this._ID=this.ListaCanciones;
+            this.genero=this.ListaCanciones;
+            console.log(ListaCanciones);
+        }
+    }else if (This.menu == 12){
+        alert("¿DESEAS VOLVER AL MENU?");
+        let opcion = new Spotify (menu);
+        console.log(opcion.menu);
+    } else {
+        alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+    }
+}
+    verCatalogoDuracion(){
+    //     if (this.menu == 10){
+
+    //     for (let i = 0; i < this.ListaCanciones.length; i++) {
+    //         this.nduracion=this.ListaCanciones;
+    //         console.log(ListaCanciones);
+    //     }
+    // }else if (This.menu == 12){
+    //     alert("¿DESEAS VOLVER AL MENU?");
+    //     let opcion = new Spotify (menu);
+    //     console.log(opcion.menu);
+    // } else {
+    //     alert("UPS! CORTE COMERCIAL, VUELVE A EJECUTAR");
+    // }
+}
+    verCatalogoAlfabetico(){
+
+    }
+}
+
+
+</script>
+</body>
+</html>
